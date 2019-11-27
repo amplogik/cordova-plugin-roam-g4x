@@ -1,0 +1,27 @@
+{
+  "name": "cordova-plugin-roam-g4x",
+  "version": "1.2.1",
+  "description": "Ingenico ROAM G4x credit card scanner",
+  "cordova": {
+    "id": "com.salonsuitesolutions.roam.g4x",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/don/cordova-plugin-roam-g4x.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "author": "Don Coleman <don.coleman@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/don/cordova-plugin-roam-g4x/issues"
+  },
+  "homepage": "https://github.com/don/cordova-plugin-roam-g4x#readme"
+}

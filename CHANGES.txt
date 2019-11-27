@@ -1,0 +1,16 @@
+= 1.2.0 =
+Upgrade G4XSwiper to 4.8.x to support removal of libstdc++.6.0.9.dylib
+    Received G4XSwiper.framework from Propay via email
+
+= 1.1.0 =
+Add default for NSMicrophoneUsageDescription on iOS #6
+Add stop, start, restart to programatically reboot reader #7
+
+= 1.0.2 =
+Check Permissions #5 
+
+= 1.0.1 =
+Add roam.isConnected #2
+
+= 1.0.0 =
+Initial Release

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin
+    xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.salonsuitesolutions.roam.g4x"
+    version="1.2.1">
+
+    <name>ROAM G4x</name>
+    <description>Ingenico ROAM G4x credit card scanner</description>
+    <license></license>
+    <keywords></keywords>
+
+    <repo>https://github.com/salonsuitesolutions/cordova-plugin-roam-g4x.git</repo>
+    <issue>https://github.com/salonsuitesolutions/cordova-plugin-roam-g4x/issues</issue>
+
+    <!--<dependency id="cordova-plugin-compat" version="^1.0.0" />-->
+
+    <js-module src="www/roam.js" name="roam">
+        <clobbers target="roam" />
+    </js-module>
+
+    <platform name="ios">
+
+        <config-file target="config.xml" parent="/widget">
+            <feature name="roam">
+                <param name="ios-package" value="SSSRoamG4xPlugin" onload="true"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/SSSRoamG4xPlugin.h" target-dir="RoamG4x" />
+        <source-file src="src/ios/SSSRoamG4xPlugin.mm" target-dir="RoamG4x" />
+
+        <!-- frameworks -->
+        <framework src="MediaPlayer.framework" />
+        <framework src="AudioToolbox.framework" />
+        <framework src="CoreBluetooth.framework" />
+        <framework src="ExternalAccessory.framework" />
+        <framework src="libstdc++.dylib"/>
+
+        <!-- RUA -->
+        <framework src="lib/RUA.framework" custom="true"/>
+        <framework src="lib/RPx.framework" custom="true"/>
+        <framework src="lib/G4XSwiper.framework" custom="true"/>
+
+        <preference name="MICROPHONE_USAGE_DESCRIPTION" default="App would like to access the microphone to use the credit card swiper." />
+        <config-file target="*-Info.plist" parent="NSMicrophoneUsageDescription">
+            <string>$MICROPHONE_USAGE_DESCRIPTION</string>
+        </config-file>
+
+    </platform>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/widget">
+            <feature name="Roam">
+                <param name="android-package" value="com.salonsuitesolutions.roam.RoamG4xPlugin"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.RECORD_AUDIO" />
+            <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+        </config-file>
+
+        <source-file src="src/android/RoamG4xPlugin.java"
+            target-dir="src/com/salonsuitesolutions/roam"/>
+        <lib-file src="lib/roamreaderunifiedapi-1.6.0.jar" target-dir="libs" />
+        <lib-file src="lib/swiperapi-android-4.3.11.jar" target-dir="libs" />
+
+    </platform>
+
+</plugin>
